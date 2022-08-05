@@ -1,0 +1,275 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>pj5083</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>pj5083</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">pj5083</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='參考資料.html'>參考資料</a></li></ul><li><a href='cmsimde.html'>cmsimde</a><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde<br /><h1>參考資料</h1>
+<h4>網際 CoppeliaSim 技術手冊管理系統</h4>
+<p>Web-based CoppeliaSim manual management system</p>
+<h4 style="padding-left: 30px;">專題動機</h4>
+<p style="padding-left: 30px;">從 <a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a> 可以取得 CoppeliaSim 套件各版次的最新技術手冊資料, 在 github Pages 進行配置後, 可建立 <a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a> 網站, 若使用者希望能夠針對各版本靈活運用這份技術資料, 並隨著各種功能的研究與運用流程, 配合加入客製化案例與延伸說明時, 就必須設法透過網際內容管理的模式進行修改.</p>
+<h4 style="padding-left: 30px;">相關技術探討</h4>
+<p style="padding-left: 30px;"><a href="https://github.com/cyberbotics/webots">https://github.com/cyberbotics/webots</a> 的技術手冊採用 Markdown 格式編寫, 透過 <a href="https://github.com/showdownjs/showdown">https://github.com/showdownjs/showdown</a> 即時轉為 html, 由於文檔內容以 Github 倉儲管理, 因此即時轉檔加上倉儲內容的版次發布功能, 可以直接在 Github Pages 網站擷取各套件版次對應的技術手冊內容.</p>
+<p style="padding-left: 30px;">至於 CoppeliaSim 在 <a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a> 倉儲中並未揭露其技術手冊編輯與管理流程, 但從其使用 iframe 配置技術手冊的網頁架構, 且採用 Google 搜尋進行內容關鍵字查詢的情況來看, 應該是採用 html 檔案編輯工具進行內容維護後, 再提交推送至 <a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a> 倉儲.</p>
+<h4 style="padding-left: 30px;">研究方法</h4>
+<p style="padding-left: 30px;">從現有技術面而言, <a href="https://github.com/cyberbotics/webots">https://github.com/cyberbotics/webots</a> 利用 Markdown 轉 html 的方式, 最易於管理網頁資料, 但 <a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a> 並無原始 Markdown 資料, 因此若希望採用 Webots 的技術手冊管理流程, 勢必要先將 html 轉為 Markdown 進行編輯配置後, 再轉回易於管理與配置的網站系統. 過程中最大的問題是 Markdown 對於圖檔縮放所提供的彈性, 較 html 低, 一般為了頁面效果, 會混用 Markdown 與 html 標註 (例如: Pelican 網誌系統), 此舉將增加文檔編輯過程中解決衝突時的難度.</p>
+<p style="padding-left: 30px;">針對目前 <a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a> 網站檔案皆為 html 的情況, 直接採用網際 html 編輯系統與 Github Pages 進行管理, 應該是最可行的方案.</p>
+<h4 style="padding-left: 30px;">研究流程</h4>
+<p style="padding-left: 30px;">假如要將 <a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a> 納入 cmsimde 網際內容管理系統的架構進行配置, 首先必須取得其 <a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a> 網頁左側的 html 階次. 也就是從 wb_tree.html 檔案中, 根據各 htm 檔案引用時 div 標註中的 id 進行階次判斷:</p>
+<p style="padding-left: 30px;">首先, 可以利用 bs4 取得 wb_tree.html 中各 div 標註的 id 數列:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+
+soup = BeautifulSoup(data, 'html.parser')
+
+#finding the div with the id
+ids = [tag['id'] for tag in soup.select('div[id]')]
+  
+print(ids)</pre>
+<p>第二種方法, 也可以取出各 div 標註的 id 內容:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+
+soup = BeautifulSoup(data, 'html.parser')
+
+for ID in soup.find_all('div', id=True):  
+    print(ID.get('id'))</pre>
+<p>接著必須取得各 div 標註中 anchor 標註的超文件 text 資料, 也就是 <a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a> 網頁左側, 各連結的字串, 分別對應到 href 連結的 .htm 檔案名稱:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+
+soup = BeautifulSoup(data, 'html.parser')
+
+# get anchor under div, and print text
+for a in soup.select('div a[href]'):
+    print (a.text)
+</pre>
+<p>接下來, 為了同時列出各 div 標註的 id 與其中對應的 href 連結 .htm 檔案名稱, 使用 zip() 進行迴圈處理:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+with open("wb_tree.html") as f:
+    data = f.read()
+
+soup = BeautifulSoup(data, 'html.parser')
+
+count = 0
+for i in zip(soup.find_all('div', id=True), soup.select('div a[href]')):
+    count += 1
+    print(i[0].get('id'), i[1].text)
+print("total html:" + str(count))
+# 主要 .htm 檔案有 57 個
+</pre>
+<p>從上一個程式的執行, 可以發現列在 <a href="https://mde.tw/copsimdoc/">https://mde.tw/copsimdoc/</a> 網頁左側的 .htm 網頁有 57 個, 且 div id 採用 folder.x.x.x 的格式進行設定, folder.x 可以對應到 cmsimde 的 H1 頁面, folder.x.x 則對應 H2 頁面, 而 folder.x.x.x 則對應到 H3 頁面.</p>
+<p>其他專題流程, 根據上述程式的測試, 已知可以利用 cmsimde 將 <a href="https://github.com/CoppeliaRobotics/helpFiles">https://github.com/CoppeliaRobotics/helpFiles</a> 倉儲中的標題 .htm 轉入 config/content.htm 檔案後, 直接利用動態網頁進行編輯管理, 但原始 CoppeliaSim 網頁中的圖檔與相對 href 連結則必須設法轉為 cmsimde 動態網頁的格式.</p>
+<p>一旦 CoppeliaSim 納入 cmsimde 網際內容管理系統後, 參與協同管理者, 就可以利用動態網頁處理衝突後, 轉為靜態網頁進行 Github Pages 的靜態網頁配置, 並利用關鍵字搜尋, Pelican 與 Reveal 的網誌及簡報進行與 CoppeliaSim 有關的功能與案例介紹, 其中包含各版次延伸程式的編譯與後續應用研究.</p>
+<h4>上述專題研究可以分為:</h4>
+<p style="padding-left: 30px;">part1: CoppeliaSim 技術手冊網際內容管理系統配置 (技術類別: Python 與 Flask 網際程式應用, Leo Editor 作為 IDE)</p>
+<p style="padding-left: 30px;">part2: CoppeliaSim 系統與延伸模組編譯 (技術類別: Msys2/C++/Lua/Python Programming 應用, Leo Editor 作為 IDE)</p>
+<p style="padding-left: 30px;">part3: CoppeliaSim 應用案例研究 (技術類別: NX12, NX2206, Solvespace, Onshape, CoppeliaSim, Lua, Python, Leo Editor 作為 IDE, 基本 MCAD 或 Reinforcement Learning 延伸應用)</p>
+<p>CoppeliaSim 場景利用 Arudino script 執行虛擬控制: <a href="https://bitbucket.org/afaina/horosim.git">https://bitbucket.org/afaina/horosim.git</a></p>
+<p style="padding-left: 30px;">HoRoSim (Holistic Robotic Simulator) allows you to <span style="background-color: #ffff99;">simulate physical devices controlled by Arduino code</span>. The user defines standard electronic circuits that are employed in the Arduino code (see <a href="https://bitbucket.org/afaina/horosim/src/master/docs/HardwareSetup.md">Hardware Setup function</a>) and a robot simulator, CoppeliaSim, simulates the physics of the device. Thus, HoRoSim simulates Arduino code with a physics engine and based on the electronic circuits defined. You can use the Arduino IDE to compile the code and run it, see instructions bellow. <br/><br/>The simulator has been described in this <a href="https://bitbucket.org/afaina/horosim/src/897fb399d296130aef4054a3ee7512b6412e4bfc/docs/faina2021RIE_HoRoSim_postprint.pdf">article</a>, which has been published on the 13th International Conference on 2021 Robotics in Education conference. Cite:<br/><br/>Faiña A. (2022) HoRoSim, a Holistic Robot Simulator: Arduino Code, Electronic Circuits and Physics. In: Merdan M., Lepuschitz W., Koppensteiner G., Balogh R., Obdržálek D. (eds) Robotics in Education. RiE 2021. Advances in Intelligent Systems and Computing, vol 1359. Springer, Cham. <a href="https://doi.org/10.1007/978-3-030-82544-7_24">https://doi.org/10.1007/978-3-030-82544-7_24</a></p>
+<h4>應用案例:</h4>
+<p><a href="./../downloads/w18/Application of deep reinforcement learning for control problems.pdf">Application of deep reinforcement learning for control problems.pdf</a></p>
+<p>利用 uStepper STL 零件做為參考, 自行在 NX12 與 NX2027 中進行零組件設計組立後, 轉入 CoppeliaSim 建立 uStepper.ttm, 以及後續應用.</p>
+<p><a href="https://github.com/uStepper/uStepper-RobotArm-Rev3">https://github.com/uStepper/uStepper-RobotArm-Rev3</a></p>
+<p><a href="https://www.thingiverse.com/thing:3876856/files">uStepper Robotic Arm STL files</a></p>
+<p><a href="./../downloads/w18/ustepper/ustepperArmKinematics.pdf">ustepperArmKinematics.pdf</a></p>
+<p><a href="./../downloads/w18/ustepper/ustepper_Instructions.pdf">ustepper_Instructions.pdf</a></p>
+<p>References: <a href="https://www.stlfinder.com/3dmodels/ustepper/">https://www.stlfinder.com/3dmodels/ustepper/</a></p>
+<p>過程中需要利用 Python GUI 建立控制套件, 可利用 <a href="https://beeware.org/">https://beeware.org/</a> (<a href="https://github.com/beeware">https://github.com/beeware</a>)製作.</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/uoMiHs1qkWM" title="YouTube video player" width="560"></iframe><br/>Computer Aided Design and Reinforcement Learning:</p>
+<p style="padding-left: 30px;"><a href="https://www.youtube.com/watch?v=FgzM3zpZ55o">https://www.youtube.com/watch?v=FgzM3zpZ55o</a></p>
+<p style="padding-left: 30px;"><a href="https://www.youtube.com/watch?v=dhEF5pfYmvc">https://www.youtube.com/watch?v=dhEF5pfYmvc</a></p>
+<p style="padding-left: 30px;">2008 <a href="https://link.springer.com/book/10.1007/978-93-86279-38-5">Stochastic Approximation: A Dynamical Systems Viewpoint</a></p>
+<p style="padding-left: 30px;">2018 <a href="https://arxiv.org/pdf/1707.03770.pdf">Fastest Convergence for Q-Learning</a></p>
+<br />About << <a href='About.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
