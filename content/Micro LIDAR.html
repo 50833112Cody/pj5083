@@ -2,7 +2,7 @@
         <head>
         <title>pj5083</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,28 +141,20 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">參考資料 << <a href='參考資料.html'>Previous</a> <a href='Examples.html'>Next</a> >> Examples<br /><h1>Literature Review</h1>
-<p><a href="http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1214&amp;context=mesp">2013 - Automated Foosball Table</a> (<a href="https://digitalcommons.calpoly.edu/mesp/196/">Senior Project Report</a>), <a href="https://digitalcommons.calpoly.edu/mesp/index.20.html">Other refs</a></p>
-<p><a href="https://store.steampowered.com/app/779730/Foosball_VR/">2018 - Foosball VR</a></p>
-<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8988113">2019 - Design of an experimental platform for the automation of the goalkeeper of a foosball table</a> (西班牙文, 使用 Gooogle Translate 翻成英文後閱讀)</p>
-<p><a href="./../downloads/KIcker.pdf">KIcker.pdf</a></p>
-<p>Can <a href="https://codeloop.org/python-gui-automation-getting-mouse-position/">https://codeloop.org/python-gui-automation-getting-mouse-position/</a> be used to control the virtual foosball bar movement</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import win32api
-from time import sleep
-
-savedpos = win32api.GetCursorPos()
-count = 0
-while(True):
-
-    curpos = win32api.GetCursorPos()
-    print(curpos)
-    if savedpos != curpos:
-        count = count +1
-        savedpos = curpos
-        print("Mouse Movement # ", count)
-    sleep(0.05)</pre>
-<p>左手選擇各控制桿是否連動, 右手則感測滑鼠移動前後或左右力道, 轉而成為 foosball 控制桿前進後退或旋轉擊球</p>
-<br />參考資料 << <a href='參考資料.html'>Previous</a> <a href='Examples.html'>Next</a> >> Examples</div>
+    <div id="tipue_search_content">Sensors << <a href='Sensors.html'>Previous</a> <a href='Accelerometer.html'>Next</a> >> Accelerometer<br /><h1>Micro LIDAR</h1>
+<p><a href="https://learn.adafruit.com/adafruit-vl53l0x-micro-lidar-distance-sensor-breakout/overview">Adafruit VL53L0X</a> Time of Flight Micro-LIDAR Distance Sensor Breakout</p>
+<p>To begin reading sensor data, you will need to install the <a href="https://github.com/adafruit/Adafruit_VL53L0X">Adafruit_VL53L0X Library</a>.</p>
+<p><a href="https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use">Arduino Libraries | All About Arduino Libraries | Adafruit Learning System</a></p>
+<p>Connect with Arduino:</p>
+<p>You can easily wire this breakout to any microcontroller, we'll be using an Arduino. For another kind of microcontroller, just make sure it has I2C, then port the API code. We strongly recommend using an Arduino to start though!</p>
+<p>Connect Vin to the power supply, 3-5V is fine (red wire on STEMMA QT version). Use the same voltage that the microcontroller logic is based off of. For most Arduinos, that is 5V.</p>
+<p>Connect GND to common power/data ground (black wire on STEMMA QT version).</p>
+<p>Connect the SCL pin to the I2C clock SCL pin on your Arduino (yellow wire on STEMMA QT version). On an UNO &amp; '328 based Arduino, this is also known as A5, on a Mega it is also known as digital 21 and on a Leonardo/Micro, digital 3.</p>
+<p>Connect the SDA pin to the I2C data SDA pin on your Arduino (blue wire on STEMMA QT version). On an UNO &amp; '328 based Arduino, this is also known as A4, on a Mega it is also known as digital 20 and on a Leonardo/Micro, digital 2.</p>
+<p>The VL53L0X has a default I2C address of 0x29!</p>
+<p>You can change it, but only in software. That means you have to wire the SHUTDOWN pin and hold all but one sensor in reset while you reconfigure one sensor at a time</p>
+<p><img caption="false" height="300" src="./../images/adafruit_products_VL53L0X_Arduino_original.png" width="400"/></p>
+<br />Sensors << <a href='Sensors.html'>Previous</a> <a href='Accelerometer.html'>Next</a> >> Accelerometer</div>
         
     <!-- footer -->
       <div class="container">

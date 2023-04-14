@@ -233,8 +233,10 @@ print(contentHtml)
 <p>Ref:</p>
 <p style="padding-left: 30px;"><a href="https://24h.pchome.com.tw/prod/CBAZ0H-A81596366">https://24h.pchome.com.tw/prod/CBAZ0H-A81596366</a></p>
 <p style="padding-left: 30px;"><a href="https://www.hightimesports.com/foosball_tables/fireball_sport">https://www.hightimesports.com/foosball_tables/fireball_sport</a></p>
-<p style="padding-left: 30px;"><a href="https://24h.pchome.com.tw/prod/DSAD7V-A75924416">https://24h.pchome.com.tw/prod/DSAD7V-A75924416</a> </p>
-<p style="padding-left: 30px;"><a href="https://tooploox.com/foosballytics-real-time-computer-vision">https://tooploox.com/foosballytics-real-time-computer-vision</a> </p><h1>Literature Review</h1>
+<p style="padding-left: 30px;"><a href="https://www.hightimesports.com/foosball_tables/HighTime-Classic">https://www.hightimesports.com/foosball_tables/HighTime-Classic</a></p>
+<p style="padding-left: 30px;"><a href="https://24h.pchome.com.tw/prod/DSAD7V-A75924416">https://24h.pchome.com.tw/prod/DSAD7V-A75924416</a></p>
+<p style="padding-left: 30px;"><a href="https://tooploox.com/foosballytics-real-time-computer-vision">https://tooploox.com/foosballytics-real-time-computer-vision</a></p>
+<p style="padding-left: 30px;"><a href="https://www.taiwaniot.com.tw/product/gravity-ir-positioning-camera-%E7%B4%85%E5%A4%96%E5%AE%9A%E4%BD%8D%E6%94%9D%E5%BD%B1%E6%A8%A1%E7%B5%84-for-arduino-dfrobot%E5%8E%9F%E5%BB%A0/">Gravity: IR Positioning Camera 紅外定位攝影模組</a></p><h1>Literature Review</h1>
 <p><a href="http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1214&amp;context=mesp">2013 - Automated Foosball Table</a> (<a href="https://digitalcommons.calpoly.edu/mesp/196/">Senior Project Report</a>), <a href="https://digitalcommons.calpoly.edu/mesp/index.20.html">Other refs</a></p>
 <p><a href="https://store.steampowered.com/app/779730/Foosball_VR/">2018 - Foosball VR</a></p>
 <p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8988113">2019 - Design of an experimental platform for the automation of the goalkeeper of a foosball table</a> (西班牙文, 使用 Gooogle Translate 翻成英文後閱讀)</p>
@@ -255,7 +257,110 @@ while(True):
         print("Mouse Movement # ", count)
     sleep(0.05)</pre>
 <p>左手選擇各控制桿是否連動, 右手則感測滑鼠移動前後或左右力道, 轉而成為 foosball 控制桿前進後退或旋轉擊球</p>
-<h1>cmsimde</h1>
+<h1>Examples</h1>
+<p>Arduino side:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// Proximity Sensor Arduino Code
+
+const int sensorPin = A0; // analog pin to read sensor data
+int sensorValue = 0; // variable to store sensor data
+
+void setup() {
+  Serial.begin(9600); // set up serial communication
+}
+
+void loop() {
+  sensorValue = analogRead(sensorPin); // read the sensor data
+  Serial.println(sensorValue); // print the data to the serial port
+  delay(100); // wait for 100 milliseconds
+}</pre>
+<p>python side:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Python Code to Read Sensor Data and Activate Objects in Coppeliasim Scene
+
+import serial
+import time
+
+# set up serial communication with Arduino
+ser = serial.Serial('COM3', 9600) # replace 'COM3' with the name of your serial port
+ser.flushInput()
+
+# function to activate objects in Coppeliasim scene
+def activate_objects(sensor_value):
+    if sensor_value &gt; 500:
+        # activate object 1
+        # ... insert code to activate object 1 here ...
+    else:
+        # activate object 2
+        # ... insert code to activate object 2 here ...
+
+# main loop to read sensor data and activate objects
+while True:
+    try:
+        ser_bytes = ser.readline()
+        sensor_value = int(ser_bytes.decode().strip())
+        activate_objects(sensor_value)
+        time.sleep(0.1)
+    except:
+        print("Keyboard Interrupt")
+        break</pre>
+<hr/>
+<p></p>
+<p>vjoy and CoppeliaSim</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from sim import sim
+import pyvjoy
+
+# Connect to the CoppeliaSim simulation
+sim.simxFinish(-1)
+client_id = sim.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+
+if client_id != -1:
+    # Set up a vJoy device
+    j = pyvjoy.VJoyDevice(1)
+
+    while True:
+        # Set the position of the vJoy device axes
+        j.set_axis(pyvjoy.HID_USAGE_X, 0x4000)
+        j.set_axis(pyvjoy.HID_USAGE_Y, 0x4000)
+
+        # Control objects in the CoppeliaSim scene based on the vJoy device input
+        # ...
+
+# Disconnect from the CoppeliaSim simulation
+sim.simxFinish(client_id)</pre>
+<p>Arduino part</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">import pyvjoy
+import serial
+
+# Set up a serial connection to the Arduino
+ser = serial.Serial('/dev/ttyACM0', 9600)
+
+# Set up a vJoy device
+j = pyvjoy.VJoyDevice(1)
+
+while True:
+    # Read data from the serial connection
+    data = ser.readline().strip()
+
+    # Process the received data and set the position of the vJoy device axes
+    j.set_axis(pyvjoy.HID_USAGE_X, 0x4000)
+    j.set_axis(pyvjoy.HID_USAGE_Y, 0x4000)</pre>
+<p><a href="https://github.com/Arduino-IRremote/Arduino-IRremote">GitHub - Arduino-IRremote/Arduino-IRremote: Infrared remote library for Arduino: send and receive infrared signals with multiple protocols</a></p>
+<h2>Sensors</h2>
+<h3>Micro LIDAR</h3>
+<p><a href="https://learn.adafruit.com/adafruit-vl53l0x-micro-lidar-distance-sensor-breakout/overview">Adafruit VL53L0X</a> Time of Flight Micro-LIDAR Distance Sensor Breakout</p>
+<p>To begin reading sensor data, you will need to install the <a href="https://github.com/adafruit/Adafruit_VL53L0X">Adafruit_VL53L0X Library</a>.</p>
+<p><a href="https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use">Arduino Libraries | All About Arduino Libraries | Adafruit Learning System</a></p>
+<p>Connect with Arduino:</p>
+<p>You can easily wire this breakout to any microcontroller, we'll be using an Arduino. For another kind of microcontroller, just make sure it has I2C, then port the API code. We strongly recommend using an Arduino to start though!</p>
+<p>Connect Vin to the power supply, 3-5V is fine (red wire on STEMMA QT version). Use the same voltage that the microcontroller logic is based off of. For most Arduinos, that is 5V.</p>
+<p>Connect GND to common power/data ground (black wire on STEMMA QT version).</p>
+<p>Connect the SCL pin to the I2C clock SCL pin on your Arduino (yellow wire on STEMMA QT version). On an UNO &amp; '328 based Arduino, this is also known as A5, on a Mega it is also known as digital 21 and on a Leonardo/Micro, digital 3.</p>
+<p>Connect the SDA pin to the I2C data SDA pin on your Arduino (blue wire on STEMMA QT version). On an UNO &amp; '328 based Arduino, this is also known as A4, on a Mega it is also known as digital 20 and on a Leonardo/Micro, digital 2.</p>
+<p>The VL53L0X has a default I2C address of 0x29!</p>
+<p>You can change it, but only in software. That means you have to wire the SHUTDOWN pin and hold all but one sensor in reset while you reconfigure one sensor at a time</p>
+<p><img caption="false" height="300" src="/images/adafruit_products_VL53L0X_Arduino_original.png" width="400"/></p>
+<h3>Accelerometer</h3>
+<p><a href="/downloads/H48C_Accelerometer.pdf">H48C_Accelerometer.pdf</a></p>
+<p></p><h1>cmsimde</h1>
 <p><a href="https://mde.tw/pj5083">https://mde.tw/pj5083</a> 倉儲位於 <a href="https://github.com/mdecycu/pj5083">https://github.com/mdecycu/pj5083</a>, 利用 <a href="https://github.com/mdecycu/cmsite">cmsite</a> 作為 Template 建立, 以 <a href="https://github.com/mdecycu/cmsimde">cmsimde</a> 作為子模組.</p>
 <p>具有管理權限的用戶, 可以利用 putty 在 Windows 操作系統中建立 .ppk Private key, 與 Github 帳號中的 SSH 格式 Public key 對應後, 即可利用 git 將帶有子模組的倉儲內容取下後進行內容維護.</p>
 <p>假設在近端的 putty sesssion 名稱為 mdecycu, 則取下帶有子模組的倉儲有以下兩種方法:</p>
@@ -271,8 +376,7 @@ while(True):
 <p></p>
 <p></p>
 <p></p>
-<p></p>
-<h1>Brython</h1>
+<p></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China#Construction_details">ROC 國旗規格</a> <a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E6%97%97#%E8%A7%84%E6%A0%BC">PROC 國旗規格</a> <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_States#Specifications">USA 國旗規格</a></p>
 <p><a href="https://gist.github.com/mdecourse/05930b1775b77293523b59b1bbb43e57">Gist Brython scripts</a></p>
 <p><a href="https://mde.tw/cp2021/content/%E8%A7%A3%E9%A1%8C%E7%B7%B4%E7%BF%92.html">解題練習</a></p>

@@ -141,28 +141,94 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">參考資料 << <a href='參考資料.html'>Previous</a> <a href='Examples.html'>Next</a> >> Examples<br /><h1>Literature Review</h1>
-<p><a href="http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1214&amp;context=mesp">2013 - Automated Foosball Table</a> (<a href="https://digitalcommons.calpoly.edu/mesp/196/">Senior Project Report</a>), <a href="https://digitalcommons.calpoly.edu/mesp/index.20.html">Other refs</a></p>
-<p><a href="https://store.steampowered.com/app/779730/Foosball_VR/">2018 - Foosball VR</a></p>
-<p><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8988113">2019 - Design of an experimental platform for the automation of the goalkeeper of a foosball table</a> (西班牙文, 使用 Gooogle Translate 翻成英文後閱讀)</p>
-<p><a href="./../downloads/KIcker.pdf">KIcker.pdf</a></p>
-<p>Can <a href="https://codeloop.org/python-gui-automation-getting-mouse-position/">https://codeloop.org/python-gui-automation-getting-mouse-position/</a> be used to control the virtual foosball bar movement</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import win32api
-from time import sleep
+    <div id="tipue_search_content">Literature Review << <a href='Literature Review.html'>Previous</a> <a href='Sensors.html'>Next</a> >> Sensors<br /><h1>Examples</h1>
+<p>Arduino side:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// Proximity Sensor Arduino Code
 
-savedpos = win32api.GetCursorPos()
-count = 0
-while(True):
+const int sensorPin = A0; // analog pin to read sensor data
+int sensorValue = 0; // variable to store sensor data
 
-    curpos = win32api.GetCursorPos()
-    print(curpos)
-    if savedpos != curpos:
-        count = count +1
-        savedpos = curpos
-        print("Mouse Movement # ", count)
-    sleep(0.05)</pre>
-<p>左手選擇各控制桿是否連動, 右手則感測滑鼠移動前後或左右力道, 轉而成為 foosball 控制桿前進後退或旋轉擊球</p>
-<br />參考資料 << <a href='參考資料.html'>Previous</a> <a href='Examples.html'>Next</a> >> Examples</div>
+void setup() {
+  Serial.begin(9600); // set up serial communication
+}
+
+void loop() {
+  sensorValue = analogRead(sensorPin); // read the sensor data
+  Serial.println(sensorValue); // print the data to the serial port
+  delay(100); // wait for 100 milliseconds
+}</pre>
+<p>python side:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Python Code to Read Sensor Data and Activate Objects in Coppeliasim Scene
+
+import serial
+import time
+
+# set up serial communication with Arduino
+ser = serial.Serial('COM3', 9600) # replace 'COM3' with the name of your serial port
+ser.flushInput()
+
+# function to activate objects in Coppeliasim scene
+def activate_objects(sensor_value):
+    if sensor_value &gt; 500:
+        # activate object 1
+        # ... insert code to activate object 1 here ...
+    else:
+        # activate object 2
+        # ... insert code to activate object 2 here ...
+
+# main loop to read sensor data and activate objects
+while True:
+    try:
+        ser_bytes = ser.readline()
+        sensor_value = int(ser_bytes.decode().strip())
+        activate_objects(sensor_value)
+        time.sleep(0.1)
+    except:
+        print("Keyboard Interrupt")
+        break</pre>
+<hr/>
+<p></p>
+<p>vjoy and CoppeliaSim</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from sim import sim
+import pyvjoy
+
+# Connect to the CoppeliaSim simulation
+sim.simxFinish(-1)
+client_id = sim.simxStart('127.0.0.1', 19997, True, True, 5000, 5)
+
+if client_id != -1:
+    # Set up a vJoy device
+    j = pyvjoy.VJoyDevice(1)
+
+    while True:
+        # Set the position of the vJoy device axes
+        j.set_axis(pyvjoy.HID_USAGE_X, 0x4000)
+        j.set_axis(pyvjoy.HID_USAGE_Y, 0x4000)
+
+        # Control objects in the CoppeliaSim scene based on the vJoy device input
+        # ...
+
+# Disconnect from the CoppeliaSim simulation
+sim.simxFinish(client_id)</pre>
+<p>Arduino part</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">import pyvjoy
+import serial
+
+# Set up a serial connection to the Arduino
+ser = serial.Serial('/dev/ttyACM0', 9600)
+
+# Set up a vJoy device
+j = pyvjoy.VJoyDevice(1)
+
+while True:
+    # Read data from the serial connection
+    data = ser.readline().strip()
+
+    # Process the received data and set the position of the vJoy device axes
+    j.set_axis(pyvjoy.HID_USAGE_X, 0x4000)
+    j.set_axis(pyvjoy.HID_USAGE_Y, 0x4000)</pre>
+<p><a href="https://github.com/Arduino-IRremote/Arduino-IRremote">GitHub - Arduino-IRremote/Arduino-IRremote: Infrared remote library for Arduino: send and receive infrared signals with multiple protocols</a></p>
+<br />Literature Review << <a href='Literature Review.html'>Previous</a> <a href='Sensors.html'>Next</a> >> Sensors</div>
         
     <!-- footer -->
       <div class="container">
